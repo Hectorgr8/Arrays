@@ -1,3 +1,10 @@
+<html>
+            
+                <body bgcolor="lightblue">
+                </body>
+</html>
+
+
 <?php 
 if(!isset($_GET['companero']))
 	$_GET['companero']=1;
@@ -27,7 +34,7 @@ if(!isset($_GET['companero']))
 	];
 	
 	$txt='<form>';
-	$txt.='<select name="companero">';
+	$txt.='<select name="companero" id="companero" onchange="calcular()">';
 	foreach ($companeros as $mesa => $nombre){
 	$txt.='<option value="'.$mesa.'" '
 		.($mesa==$_GET['companero']?'selected':'')
@@ -35,10 +42,20 @@ if(!isset($_GET['companero']))
 	$txt.='value="'.$mesa.'"';
 	}
 	$txt.='</select>';
-	$txt.='<button>enviar</button>';
+	$txt.='<button>Enviar</button>';
 	$txt.='</form>';
 	echo $txt;
 	echo $_GET['companero'];
+?>
 	
-	
+<div id="r"> </div>
 
+
+<script>
+console.log ('Companero');
+function calcular(){
+	companero=document.getElementById('companero').value;
+	document.getElementById('companero').value;
+	document.getElementById('r').innerHTML=companero;
+}
+</script>
