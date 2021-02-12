@@ -17,17 +17,19 @@
 
 
 <?php
-	$a=7;
-			$dia=[
-				'lunes',
-				'martes',
-				'miercoles',
-				'jueves',
-				'viernes',
-				'sabado',
-				'domingo',
-			];
-			echo $dia[$_GET['N']-1];
+if(!isset($_GET['N']))
+	$_GET['N']=1;
+		$a=7;
+				$dia=[
+					'lunes',
+					'martes',
+					'miercoles',
+					'jueves',
+					'viernes',
+					'sabado',
+					'domingo',
+				];
+				echo $dia[$_GET['N']-1];
 ?>
 
 
